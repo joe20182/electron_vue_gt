@@ -1,6 +1,26 @@
 <template>
     <div class="scale-wrapper">
         <h1>Guitar fretboard for noobs</h1>
+        <div class="options">
+            <span class="title">Fret</span>
+            <div class="option" :class="{'active': length === 22}" @click="changeFret(22)">22</div>
+            <div class="option" :class="{'active': length === 24}" @click="changeFret(24)">24</div>
+        </div>
+        <div class="options">
+            <span class="title">Key</span>
+            <div class="option">C</div>
+            <div class="option">#C</div>
+            <div class="option">D</div>
+            <div class="option">#D</div>
+            <div class="option">E</div>
+            <div class="option">F</div>
+            <div class="option">#F</div>
+            <div class="option">G</div>
+            <div class="option">#G</div>
+            <div class="option">A</div>
+            <div class="option">#A</div>
+            <div class="option">B</div>
+        </div>
         <div class="neck">
             <ul class="string hE">
                 <li v-for="i in length + 1" :key="i"><span>{{cvtName(i + baseNotes[0] - 1)}}</span></li>
@@ -31,7 +51,7 @@ export default {
         return {
             key: null,
             baseNotes: [4, 11, 7, 2, 9, 4],
-            length: 24
+            length: 22
         }
     },
     methods: {
@@ -75,6 +95,12 @@ export default {
                 return 'B';
                 break;
             }
+        },
+        changeKey() {
+            // 1
+        },
+        changeFret(num) {
+            this.length = num;
         }
     }
 }
@@ -82,11 +108,13 @@ export default {
 
 <style lang="scss">
 @import '../../styles/mixins.scss';
+$d: #1D1B1B;
 .scale-wrapper {
     font-size: 18px;
+    padding: 15px;
     .neck {
         position: relative;
-        background-image: linear-gradient(45deg, #826132, #946b30);
+        background-image: linear-gradient(45deg, #826132, #987D55);
         ul {
             list-style: none;
             @include clearfix();
@@ -105,7 +133,7 @@ export default {
                 line-height: 32px;
                 &:first-child {
                     width: 26px;
-                    background-color: #1D1B1B;
+                    background-color: $d;
                     border-right: 2px solid #666;
                     box-shadow: 2px 0px 0px rgba(black, .4);
                 }
@@ -157,6 +185,51 @@ export default {
                     top: 15px;
                     height: 3px;
                     background-color: rgba(#EEE, .5);
+                }
+            }
+        }
+    }
+    h1 {
+        margin-bottom: 20px;
+    }
+    .options {
+        font-weight: bold;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        .title {
+            display: inline-block;
+            width: 42px;
+        }
+        .option {
+            display: inline-block;
+            font-weight: 400;
+            cursor: pointer;
+            min-width: 40px;
+            text-align: center;
+            margin-left: 10px;
+            border: 1px solid $d;
+            box-sizing: border-box;
+            transition: .5s;
+            position: relative;
+            overflow: hidden;
+            &:after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-color: $d;
+                position: absolute;
+                top: 0;
+                left: -100%;
+                transition: .5s;
+                z-index: -1;
+            }
+            &:hover,
+            &.active {
+                color: #FFF;
+                &:after {
+                    left: 0;
                 }
             }
         }
