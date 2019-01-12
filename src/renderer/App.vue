@@ -6,7 +6,7 @@
 
 <script>
     export default {
-    name: 'electron_vue_gt'
+        name: 'electron_vue_gt'
     }
 </script>
 
