@@ -1,10 +1,13 @@
 # electron_vue_gt
 
+基於electron-vue的小專案<br/>
 
-> 基於electron-vue的小專案<br/>
 > 可列出吉他指板上所有音名
 > ![page-normal](https://github.com/joe20182/electron_vue_gt/blob/master/docs/images/fret-1.JPG?raw=true)<br/>
-> 也可指定特定的調性，以助於新手練習即興<br/>
+
+<br/>
+
+> 也可指定特定的調性並標注根音，以助於新手練習即興<br/>
 > ![page-active](https://github.com/joe20182/electron_vue_gt/blob/master/docs/images/fret-2.JPG?raw=true)
 
 #### Build Setup
