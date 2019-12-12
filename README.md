@@ -1,6 +1,7 @@
 # electron_vue_gt
 
-[網頁版demo](https://joe20182.github.io/fretboard-dictionary/#/)<br>
+[網頁版demo(web demo)](https://joe20182.github.io/fretboard-dictionary/#/)<br>
+[web repository](https://github.com/joe20182/fretboard-dictionary)<br>
 
 基於electron-vue的小專案<br/>
 
