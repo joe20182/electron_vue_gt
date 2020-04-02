@@ -86,7 +86,7 @@ export default {
             if (!this.key) {
                 return true;
             }
-            switch ((num - this.keyMap.indexOf(this.key)) % 12) {
+            switch (Math.abs(num - this.keyMap.indexOf(this.key)) % 12) {
             case 0:
             case 2:
             case 4:
